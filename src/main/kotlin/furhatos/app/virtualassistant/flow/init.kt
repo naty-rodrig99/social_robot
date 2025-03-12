@@ -15,17 +15,13 @@ import furhatos.util.Language
 
 val Init: State = state {
     init {
-        /** Set our default interaction parameters */
         users.setSimpleEngagementPolicy(DISTANCE_TO_ENGAGE, MAX_NUMBER_OF_USERS)
-        //furhat.say("<prosody pitch='120Hz' rate='0.95'>Hola, soy una voz de género ambiguo.</prosody>")
+        //furhat.setCharacter("Ted")
         furhat.voice = Voice(gender = Gender.NEUTRAL, language = Language.ENGLISH_US, pitch = "medium", rate = 1.0)
-        //furhat.voice = Voice(name = "Matthew", language = Language.ENGLISH_US, pitch = "low", rate = 1.0)
-
     }
     onEntry {
-        /** start interaction */
         when {
-           // furhat.isVirtual() -> goto(Greeting) // Convenient to bypass the need for user when running Virtual Furhat
+           // furhat.isVirtual() -> goto(Greeting)
             furhat.isVirtual() -> goto(Assistant)
             users.hasAny() -> {
                 furhat.attend(users.random)
@@ -35,5 +31,6 @@ val Init: State = state {
             else -> goto(Idle)
         }
     }
+
 
 }
