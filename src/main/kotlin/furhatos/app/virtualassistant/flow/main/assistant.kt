@@ -7,10 +7,7 @@ import furhatos.flow.kotlin.onResponse
 import furhatos.flow.kotlin.state
 import furhatos.nlu.common.No
 import furhatos.nlu.common.Yes
-import furhatos.app.virtualassistant.flow.nlu.RequestAppointment
-import furhatos.app.virtualassistant.flow.nlu.ConfirmBooking
-import furhatos.app.virtualassistant.flow.nlu.RequestReminder
-import furhatos.app.virtualassistant.flow.nlu.CloseConversation
+import furhatos.app.virtualassistant.flow.nlu.*
 import furhatos.gestures.Gestures
 
 
