@@ -27,7 +27,7 @@ class RequestReminder: Intent() {
 
 class CloseConversation: Intent() {
     override fun getExamples(lang: Language): List<String> {
-        return listOf("No, thank you!")
+        return listOf("No thank you")
     }
 }
 
@@ -47,11 +47,17 @@ class IncorrectBooking: Intent() {
     }
 }
 
+class AskingAgain: Intent() {
+    override fun getExamples(lang: Language): List<String> {
+        return listOf("That’s incorrect, book the dentist appointment for Thursday at 8 a.m.",
+            "that's incorrect, book it for Thursday at 8 a.m.",
+            "no thanks")
+    }
+}
+
 class CloseConversationFailure: Intent() {
     override fun getExamples(lang: Language): List<String> {
-        return listOf("That’s incorrect, book the dentist appointment for Thursday at 8am.",
-            "that's incorrect, book it for Thursday at 8am",
-            "no thanks")
+        return listOf("I don't understand, has the appointment been booked?")
     }
 }
 
@@ -66,9 +72,10 @@ class AskForHelpFailure: Intent() {
 
 class ConfirmWifiFailure: Intent() {
     override fun getExamples(lang: Language): List<String> {
-        return listOf("Yes I checked and it’s turned on",
-            "I checked, and the WiFi is enabled",
-            "The WiFi is on",)
+        return listOf("yes I checked and it's turned on",
+            "Yes I checked and it’s turned on",
+            "I checked, and the Wi-Fi is enabled",
+            "The Wi-Fi is on",)
     }
 }
 
@@ -96,24 +103,29 @@ class AskForHelp: Intent() {
 
 class ConfirmWifi: Intent() {
     override fun getExamples(lang: Language): List<String> {
-        return listOf("Yes I checked and it’s turned on")
+        return listOf("Yes I checked and it’s turned on",
+            "yes, it's turned on")
     }
 }
 
 class ConfirmNetwork: Intent() {
     override fun getExamples(lang: Language): List<String> {
-        return listOf("Yes, but it’s not connecting to the network, even though I see it there.")
+        return listOf("it is not connecting",
+            "yes but it’s not connecting to the network even though I see it there")
     }
 }
 
 class WaitingRestart: Intent() {
     override fun getExamples(lang: Language): List<String> {
-        return listOf("Alright, I’ll give it a try.")
+        return listOf("Alright, I will give it a try",
+            "all right I will give it a try",
+            "sure, I will give it a try")
     }
 }
 
 class CloseItConversation: Intent() {
     override fun getExamples(lang: Language): List<String> {
-        return listOf(" It’s working now, thanks!")
+        return listOf("It’s working now thanks",
+            "it's working now")
     }
 }
